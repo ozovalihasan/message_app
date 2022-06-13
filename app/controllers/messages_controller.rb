@@ -17,6 +17,10 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   # POST /messages or /messages.json
@@ -42,9 +46,11 @@ class MessagesController < ApplicationController
   def update
     respond_to do |format|
       if @message.update(message_params)
+        format.turbo_stream
         format.html { redirect_to message_url(@message), notice: "Message was successfully updated." }
         format.json { render :show, status: :ok, location: @message }
       else
+        format.turbo_stream
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
