@@ -2,6 +2,8 @@
 
 <h1>Messages</h1>
 
+<h2 id="messages_counter"><%= @messages.count %></h2>
+
 <div id="new_message">
   <%= render partial: "messages/form", locals: { message: Message.new } %>
 </div>
