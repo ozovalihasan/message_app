@@ -1,5 +1,5 @@
 <%=  turbo_stream.update("new_message", partial: "messages/form", locals: { message: @form_message }) %>
 
-<% if @form_message.new_record?  %>
+<% if @message.errors.none?  %>
     <%=  turbo_stream.prepend("messages", partial: "messages/message", locals: { message: @message }) %>
 <% end %>
