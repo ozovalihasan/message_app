@@ -25,9 +25,13 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        @form_message = Message.new
+        format.turbo_stream 
         format.html { redirect_to message_url(@message), notice: "Message was successfully created." }
         format.json { render :show, status: :created, location: @message }
       else
+        @form_message = @message
+        format.turbo_stream 
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
