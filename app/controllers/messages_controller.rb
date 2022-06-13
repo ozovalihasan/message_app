@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   # GET /messages or /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.order created_at: :desc
   end
 
   # GET /messages/1 or /messages/1.json
