@@ -3,5 +3,5 @@
 <% if @message.errors.none?  %>
     <%=  turbo_stream.prepend("messages", partial: "messages/message", locals: { message: @message }) %>
     <%=  turbo_stream.update("messages_counter", Message.count) %>
-
+    <%=  turbo_stream.update("notice", "Message #{@message.id} created") %>
 <% end %>

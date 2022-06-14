@@ -1,5 +1,6 @@
 <% if @message.errors.none? %>
     <%= turbo_stream.update(@message, partial: "messages/message", locals: { message: @message }) %>
+    <%=  turbo_stream.update("notice", "Message #{@message.id} is updated") %>
 <% else %>
     <%= turbo_stream.update(@message, partial: "messages/form", locals: { message: @message }) %>
 <% end %>
