@@ -1,8 +1,9 @@
-<p id="notice" style="color: green"><%= notice %></p>
+<p id="notice" style="color: green; position: fixed; bottom: 0; right: 0; background-color: rgba(255, 0, 0, 0.2); padding: 10px;"><%= notice %></p>
 
-<h1>Messages</h1>
-
-<h2 id="messages_counter"><%= @messages.count %></h2>
+<h3>
+  Messages
+  <sup id="messages_counter"><%= @messages.count %></sup>
+</h3>
 
 <div id="new_message">
   <%= render partial: "messages/form", locals: { message: Message.new } %>
