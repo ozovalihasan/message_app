@@ -31,7 +31,7 @@ Messages can be shared on this application fastly and easily.
 
 ## Live demo
 
-It will be added later.
+Check [demo](https://fast-message-app.herokuapp.com/)
 
 ## Setup
 
